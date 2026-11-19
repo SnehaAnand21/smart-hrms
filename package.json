@@ -1,0 +1,29 @@
+{
+  "name": "smart-hrms-root",
+  "version": "1.0.0",
+  "description": "Smart Hospitality & Restaurant Management System (HRMS) for Real-Time Seat Availability - Full Stack MERN Academic Project",
+  "scripts": {
+    "start": "node server/server.js",
+    "build": "npm run build --prefix client",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "seed": "npm run seed --prefix server",
+    "test": "npm run test --prefix server",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "render-build": "npm install --prefix client && npm run build --prefix client && npm install --prefix server",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client"
+  },
+  "keywords": [
+    "mern",
+    "restaurant-management",
+    "real-time-seat-availability",
+    "socketio",
+    "virtual-queue",
+    "mongodb"
+  ],
+  "author": "Sneha.A [310624205264] - Easwari Engineering College",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

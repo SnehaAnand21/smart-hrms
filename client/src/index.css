@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #FAF9F5;
+    color: #1C1917;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+  
+  .dark body {
+    background-color: #0A110E;
+    color: #F1F5F3;
+  }
+  
+  h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom scrollbars for tables and floor canvas */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F3EC;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0D1613;
+}
+::-webkit-scrollbar-thumb {
+  background: #C2DFD4;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1E362C;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5EA88F;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #388B71;
+}
+
+/* Pulse animation for live indicators */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s infinite ease-in-out;
+}

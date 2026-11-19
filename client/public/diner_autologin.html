@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Diner Autologin Helper</title>
+</head>
+<body style="font-family: sans-serif; padding: 20px;">
+  <h2>Authenticating Customer...</h2>
+  <script>
+    fetch('http://localhost:5000/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: 'sneha@hrms.com', password: 'customer123' })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success && data.token) {
+        localStorage.setItem('hrms_token', data.token);
+        localStorage.setItem('hrms_user', JSON.stringify(data.user));
+        // Redirect to virtual queue
+        window.location.href = '/virtual-queue';
+      } else {
+        document.body.innerHTML += '<p style="color:red;">Login failed: ' + (data.message || 'Unknown') + '</p>';
+      }
+    })
+    .catch(err => {
+      document.body.innerHTML += '<p style="color:red;">Fetch error: ' + err.message + '</p>';
+    });
+  </script>
+</body>
+</html>
