@@ -15,7 +15,7 @@ Open PowerShell or Git Bash in this project folder (`c:\Users\user\OneDrive\Desk
 1. Create a new repository on [GitHub](https://github.com/new) named `smart-hrms` (set it to Public).
 2. Link and push your local commits:
    ```bash
-   git remote add origin https://github.com/YOUR_GITHUB_USERNAME/smart-hrms.git
+   git remote add origin https://github.com/SnehaAnand21/smart-hrms.git
    git branch -M main
    git push -u origin main
    ```
@@ -84,7 +84,7 @@ I have deployed our Full Stack MERN project "Smart Hospitality & Restaurant Mana
    https://smart-hrms-sneha.onrender.com
 
 2. GitHub Repository:
-   https://github.com/YOUR_GITHUB_USERNAME/smart-hrms
+   https://github.com/SnehaAnand21/smart-hrms
 
 3. Test Credentials for Evaluation:
    - Restaurant Admin Portal:
