@@ -6,9 +6,9 @@ const connectDB = async () => {
   const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/hrms';
   
   try {
-    // Attempt standard connection with 2.5s timeout for local responsiveness
+    // Attempt standard connection with 10s timeout for cloud / local responsiveness
     await mongoose.connect(uri, {
-      serverSelectionTimeoutMS: 2500,
+      serverSelectionTimeoutMS: 10000,
     });
     console.log(`[MongoDB] Connected successfully to: ${mongoose.connection.host}/${mongoose.connection.name}`);
     return mongoose.connection;
@@ -17,9 +17,16 @@ const connectDB = async () => {
     
     // In development or review mode, fallback to embedded MongoMemoryServer
     try {
-      console.log('[MongoDB] Initializing embedded MongoDB server for instant zero-config academic demo...');
+      console.log('[MongoDB] Initializing embedded MongoDB server (v7.0.3 for Debian/Linux & Windows)...');
       const { MongoMemoryServer } = require('mongodb-memory-server');
-      mongodInstance = await MongoMemoryServer.create();
+      mongodInstance = await MongoMemoryServer.create({
+        binary: {
+          version: '7.0.3',
+        },
+        instance: {
+          dbName: 'hrms',
+        },
+      });
       const memUri = mongodInstance.getUri();
       
       await mongoose.connect(memUri);
