@@ -1,9 +1,17 @@
 # Smart Hospitality & Restaurant Management System (HRMS) for Real-Time Seat Availability
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render%20Live-brightgreen?style=for-the-badge&logo=render)](https://smart-hrms-sneha.onrender.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/SnehaAnand21/smart-hrms)
 [![MERN Stack](https://img.shields.io/badge/Stack-MERN-green.svg)](https://reactjs.org/)
 [![Socket.IO](https://img.shields.io/badge/Real--Time-Socket.IO-black.svg)](https://socket.io/)
 [![Tailwind CSS](https://img.shields.io/badge/Styling-TailwindCSS-06B6D4.svg)](https://tailwindcss.com/)
 [![Academic Review](https://img.shields.io/badge/Project-Easwari%20Engineering%20College-blue.svg)](https://srmeaswari.ac.in/)
+
+> 🌐 **Live Deployed Project URL:** [https://smart-hrms-sneha.onrender.com](https://smart-hrms-sneha.onrender.com)  
+> 🔑 **Faculty Review Credentials:**  
+> • **Restaurant Admin:** `admin@hrms.com` / `admin123`  
+> • **Customer Diner:** `sneha@hrms.com` / `customer123`  
+> *(1-Click Review Buttons are also available on the live Sign-In page for instant evaluation!)*
 
 A modern, full-stack **MERN (MongoDB, Express.js, React, Node.js)** hospitality platform delivering **genuine table-level seat visibility**, atomic double-booking prevention, an intelligent virtual queue with wait-time estimation, and sub-second real-time floor plan synchronization via **Socket.IO**.
 
