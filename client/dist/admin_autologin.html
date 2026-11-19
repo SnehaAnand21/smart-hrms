@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin Autologin Helper</title>
+</head>
+<body style="font-family: sans-serif; padding: 20px;">
+  <h2>Authenticating Administrator...</h2>
+  <script>
+    fetch('http://localhost:5000/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: 'admin@hrms.com', password: 'admin123' })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success && data.token) {
+        localStorage.setItem('hrms_token', data.token);
+        localStorage.setItem('hrms_user', JSON.stringify(data.user));
+        // Redirect to admin dashboard
+        window.location.href = '/admin/dashboard';
+      } else {
+        document.body.innerHTML += '<p style="color:red;">Login failed: ' + (data.message || 'Unknown') + '</p>';
+      }
+    })
+    .catch(err => {
+      document.body.innerHTML += '<p style="color:red;">Fetch error: ' + err.message + '</p>';
+    });
+  </script>
+</body>
+</html>
